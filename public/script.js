@@ -32,15 +32,15 @@ async function sendMessage() {
     addMessage(data.reply);
   } catch (error) {
     console.error("Fetch Error:", error);
-    addMessage("Error: Could not connect to the bot, fam.");
+    messagesDiv.removeChild(messagesDiv.lastChild);
+    addMessage("Error: Could not connect to the bot.");
   }
 }
 
 function addTypingIndicator() {
   const typingDiv = document.createElement("div");
   typingDiv.classList.add("message", "bot-message");
-  typingDiv.innerHTML =
-    '<i class="fas fa-spinner fa-spin"></i> Bot\'s typing...';
+  typingDiv.innerHTML = 'Thinking<span class="dots">...</span>';
   messagesDiv.appendChild(typingDiv);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
   return typingDiv;
@@ -50,7 +50,7 @@ function clearChat() {
   while (messagesDiv.firstChild) {
     messagesDiv.removeChild(messagesDiv.firstChild);
   }
-  addMessage("Chat cleared, yo!", false);
+  addMessage("Chat cleared!", false);
 }
 
 function toggleTheme() {
@@ -74,6 +74,6 @@ toggleThemeBtn.addEventListener("click", toggleTheme);
 
 // Initial welcome message
 addMessage(
-  "Hellooo!!! I’m your Gemini Chat.... Drop a message and let’s vibe!",
+  "Hey there! I’m your Gemini Chat bot. How can I assist you today?",
   false
 );
