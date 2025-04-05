@@ -74,6 +74,6 @@ toggleThemeBtn.addEventListener("click", toggleTheme);
 
 // Initial welcome message
 addMessage(
-  "Hey there! I’m your Gemini Chat bot. How can I assist you today?",
+  "Hey 👋👋  I’m your AI assistant 🤖. How can I assist you today?",
   false
 );
